@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY PORTFOLIO | Skills</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+    transition:0.4s;
+}
+
+/* ================= BODY ================= */
+body{
+    background:#0f0f14;
+    color:#eaeaea;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND EFFECT ================= */
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    filter:blur(130px);
+    z-index:-1;
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+body::before{
+    top:-120px;
+    left:-120px;
+    background:linear-gradient(135deg,#00f2fe,#4facfe);
+}
+body::after{
+    bottom:-120px;
+    right:-120px;
+    background:linear-gradient(135deg,#f7971e,#ffd200);
+}
+
+/* ================= HEADER ================= */
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 60px;
+    background:rgba(20,20,30,0.8);
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* LOGO */
+.logo h3{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:2px;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* NAVBAR */
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap:45px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:#eaeaea;
+    font-weight:600;
+    position:relative;
+    padding-bottom:6px;
+}
+
+.navbar ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0%;
+    height:2px;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+}
+
+.navbar ul li a:hover::after{
+    width:100%;
+}
+
+.navbar ul li a:hover,
+.navbar a.active{
+    color:#21d4fd;
+}
+
+/* ================= SECTION ================= */
+section{
+    max-width:1200px;
+    margin:80px auto;
+    padding:100px 60px;
+    border-radius:22px;
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ================= SKILLS ================= */
+.main-taxt{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.main-taxt span{
+    font-size:14px;
+    letter-spacing:2px;
+    color:#9ca3af;
+}
+
+.main-taxt h2{
+    font-size:38px;
+    margin-top:10px;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.skill-main{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:80px;
+}
+
+.skills-left h1,
+.skills-right h1{
+    margin-bottom:30px;
+    font-size:26px;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* TECHNICAL SKILLS */
+.skill-bar{
+    margin-bottom:28px;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+
+.bar{
+    height:10px;
+    background:rgba(255,255,255,0.08);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.bar::after{
+    content:"";
+    height:100%;
+    display:block;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+    border-radius:10px;
+    animation:load 2s forwards;
+}
+
+.skill-bar:nth-child(2) .bar::after{width:89%;}
+.skill-bar:nth-child(3) .bar::after{width:70%;}
+.skill-bar:nth-child(4) .bar::after{width:50%;}
+.skill-bar:nth-child(5) .bar::after{width:70%;}
+
+/* PROFESSIONAL SKILLS */
+.skill-bar1{
+    margin-bottom:28px;
+}
+
+.info1{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+
+.bar1{
+    height:10px;
+    background:rgba(255,255,255,0.08);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.bar1::after{
+    content:"";
+    height:100%;
+    display:block;
+     background:linear-gradient(90deg,#21d4fd,#b721ff);
+    border-radius:10px;
+    animation:load 2s forwards;
+}
+
+.skill-bar1:nth-child(2) .bar1::after{width:80%;}
+.skill-bar1:nth-child(3) .bar1::after{width:85%;}
+.skill-bar1:nth-child(4) .bar1::after{width:75%;}
+.skill-bar1:nth-child(5) .bar1::after{width:90%;}
+
+/* ================= ANIMATION ================= */
+@keyframes load{
+    from{width:0;}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    header{padding:18px 30px;}
+    section{padding:80px 30px;}
+    .skill-main{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo"><h3>NEERAJA</h3></div>
+    <div class="navbar">
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a class="active" href="skills.html">SKILLS</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="skills" id="skills">
+    <div class="main-taxt">
+        <span>Technical and Professional Skills</span>
+        <h2>My Skills</h2>
+    </div>
+
+    <div class="skill-main">
+        <div class="skills-left">
+            <h1>Technical Skills</h1>
+
+            <div class="skill-bar">
+                <div class="info"><p>HTML</p><p>89%</p></div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="info"><p>CSS</p><p>70%</p></div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="info"><p>JavaScript</p><p>50%</p></div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="info"><p>Python</p><p>70%</p></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <div class="skills-right">
+            <h1>Professional Skills</h1>
+
+            <div class="skill-bar1">
+                <div class="info1"><p>Leadership</p><p>80%</p></div>
+                <div class="bar1"></div>
+            </div>
+
+            <div class="skill-bar1">
+                <div class="info1"><p>Time Management</p><p>85%</p></div>
+                <div class="bar1"></div>
+            </div>
+
+            <div class="skill-bar1">
+                <div class="info1"><p>Team Work</p><p>75%</p></div>
+                <div class="bar1"></div>
+            </div>
+
+            <div class="skill-bar1">
+                <div class="info1"><p>Communication</p><p>90%</p></div>
+                <div class="bar1"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

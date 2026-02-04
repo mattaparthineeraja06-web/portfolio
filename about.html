@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Neeraja</title>
+
+<style>
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+    transition:0.4s;
+}
+
+/* ================= BODY ================= */
+body{
+    background:#0f0f14;
+    color:#eaeaea;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND EFFECT ================= */
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    filter:blur(130px);
+    z-index:-1;
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+body::before{
+    top:-120px;
+    left:-120px;
+    background:linear-gradient(135deg,#00f2fe,#4facfe);
+}
+body::after{
+    bottom:-120px;
+    right:-120px;
+    background:linear-gradient(135deg,#f7971e,#ffd200);
+}
+
+/* ================= HEADER ================= */
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 60px;
+    background:rgba(20,20,30,0.8);
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* LOGO */
+.logo h3{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:2px;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* NAVBAR */
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap:45px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:#eaeaea;
+    font-weight:600;
+    position:relative;
+    padding-bottom:6px;
+}
+
+.navbar ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0%;
+    height:2px;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+}
+
+.navbar ul li a:hover::after{
+    width:100%;
+}
+
+.navbar ul li a:hover,
+.navbar a.active{
+    color:#21d4fd;
+}
+
+/* ================= ABOUT SECTION ================= */
+.about{
+    max-width:1200px;
+    margin:100px auto;
+    padding:100px 60px;
+    border-radius:22px;
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(12px);
+    box-shadow:0 20px 45px rgba(0,0,0,0.4);
+}
+
+/* ABOUT TITLE */
+.about h2{
+    font-size:36px;
+    text-align:center;
+    margin-bottom:60px;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ================= CARD GRID ================= */
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:35px;
+}
+
+/* ================= CARD ================= */
+.card{
+    padding:30px 25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.35);
+    position:relative;
+    overflow:hidden;
+}
+
+/* GLOW BORDER */
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:20px;
+    background:linear-gradient(135deg,#21d4fd,#b721ff,#f7971e);
+    opacity:0;
+    z-index:-1;
+}
+
+/* HOVER EFFECT */
+.card:hover{
+    transform:translateY(-12px) scale(1.03);
+}
+.card:hover::before{
+    opacity:1;
+}
+
+/* CARD TITLE */
+.card h3{
+    font-size:22px;
+    margin-bottom:12px;
+    background:linear-gradient(90deg,#21d4fd,#b721ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* CARD TEXT */
+.card p,
+.card li{
+    font-size:15.5px;
+    line-height:1.7;
+    color:#d1d5db;
+}
+
+/* SKILLS LIST */
+.card ul{
+    padding-left:18px;
+}
+.card ul li{
+    margin-bottom:6px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    header{
+        padding:15px 30px;
+    }
+    .about{
+        padding:70px 30px;
+    }
+    .about h2{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <h3>NEERAJA</h3>
+    </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a class="active" href="about.html">ABOUT</a></li>
+                <li><a href="skills.html">SKILLS</a></li>
+                <li><a href="project.html">PROJECTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="about">
+    <h2>About Me</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Who I Am</h3>
+            <p>
+                I’m a passionate developer who enjoys building clean and user-friendly
+                websites and applications.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Skills</h3>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Projects</h3>
+            <p>
+                I’ve worked on portfolio websites, small web apps, and design-focused projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Goals</h3>
+            <p>
+                My goal is to grow as a full-stack developer and build impactful digital products.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Achievements</h3>
+            <p>
+                Highlights my key accomplishments, certifications, and learning milestones.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Certifications</h3>
+            <p>
+                Displays the professional and technical certifications I have earned.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
